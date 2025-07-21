@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Business Name - Professional Solutions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light gray background */
+        }
+        /* Custom styles for hero section background image */
+        .hero-bg {
+            background-image: url('https://placehold.co/1920x1080/2a64ad/ffffff?text=Business+Growth'); /* Professional blue-themed background */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        /* Style for general images, ensuring rounded corners and shadows */
+        .img-standard {
+            width: 100%;
+            height: auto;
+            max-width: 600px; /* Example max width for images */
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+            object-fit: cover; /* Ensures image covers the area without distortion */
+        }
+
+        /* Mobile menu overlay styles */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 40; /* Below the actual menu */
+            display: none; /* Hidden by default */
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%; /* Start off-screen */
+            width: 70%;
+            max-width: 300px;
+            height: 100%;
+            background-color: white;
+            z-index: 50;
+            transition: right 0.3s ease-in-out;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mobile-menu.open {
+            right: 0; /* Slide in */
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-sm py-4">
+        <nav class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-blue-700 rounded-md p-2 hover:bg-blue-50 transition duration-300">YourBusiness</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#services" class="text-gray-600 hover:text-blue-700 font-medium transition duration-300 rounded-md p-2 hover:bg-gray-100">Services</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-700 font-medium transition duration-300 rounded-md p-2 hover:bg-gray-100">About Us</a>
+                <a href="#portfolio" class="text-gray-600 hover:text-blue-700 font-medium transition duration-300 rounded-md p-2 hover:bg-gray-100">Portfolio</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-700 font-medium transition duration-300 rounded-md p-2 hover:bg-gray-100">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
+
+    <!-- Mobile Menu Sidebar -->
+    <div id="mobile-menu" class="mobile-menu">
+        <button id="close-mobile-menu" class="self-end text-gray-600 hover:text-gray-900 focus:outline-none mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <a href="#services" class="block text-gray-800 hover:text-blue-700 font-medium py-3 border-b border-gray-100" onclick="closeMobileMenu()">Services</a>
+        <a href="#about" class="block text-gray-800 hover:text-blue-700 font-medium py-3 border-b border-gray-100" onclick="closeMobileMenu()">About Us</a>
+        <a href="#portfolio" class="block text-gray-800 hover:text-blue-700 font-medium py-3 border-b border-gray-100" onclick="closeMobileMenu()">Portfolio</a>
+        <a href="#contact" class="block text-gray-800 hover:text-blue-700 font-medium py-3" onclick="closeMobileMenu()">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-bg py-20 md:py-32 text-white text-center rounded-b-xl shadow-lg">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 drop-shadow-lg">
+                Your Partner in Business Innovation
+            </h1>
+            <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto drop-shadow-md">
+                Delivering tailored solutions that drive growth and maximize efficiency.
+            </p>
+            <a href="#contact" class="bg-white hover:bg-gray-100 text-blue-700 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                Start Your Project
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">What We Offer</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-700 mb-4">
+                        <svg class="w-10 h-10 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h4l2-2m0-2l3-3m-3-3H9m10 0a2 2 0 100-4 2 2 0 000 4zm-11 0a2 2 0 100-4 2 2 0 000 4zm7-6a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Custom Software Development</h3>
+                    <p class="text-gray-600 text-center">Building bespoke software solutions to perfectly fit your operational needs.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-700 mb-4">
+                        <svg class="w-10 h-10 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Cloud Solutions & Migration</h3>
+                    <p class="text-gray-600 text-center">Seamless migration and robust cloud infrastructure for scalable business operations.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-700 mb-4">
+                        <svg class="w-10 h-10 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Digital Marketing Strategies</h3>
+                    <p class="text-gray-600 text-center">Amplify your brand's reach with targeted and effective digital marketing campaigns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 md:py-24 bg-gray-100">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <!-- Placeholder for About Us image -->
+                <img src="https://placehold.co/600x400/60a5fa/ffffff?text=Our+Team" alt="Our Dedicated Team" class="img-standard">
+            </div>
+            <div class="md:w-1/2 text-center md:text-left">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About Our Company</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    At YourBusiness, we are passionate about driving success for our clients. With years of experience in the industry, our team of experts is committed to providing innovative and effective solutions tailored to your unique challenges.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                    We believe in fostering strong partnerships and delivering measurable results. Our approach combines cutting-edge technology with deep industry knowledge to help your business thrive in a competitive landscape.
+                </p>
+                <a href="#contact" class="mt-6 inline-block bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    Learn More About Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Our Success Stories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+                    <img src="https://placehold.co/400x250/93c5fd/ffffff?text=Case+Study+1" alt="E-commerce Platform Redesign" class="img-standard mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">E-commerce Platform Redesign</h3>
+                    <p class="text-gray-600">Transformed an outdated platform into a high-performing, user-friendly e-commerce solution.</p>
+                </div>
+                <!-- Project 2 -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+                    <img src="https://placehold.co/400x250/a78bfa/ffffff?text=Case+Study+2" alt="Mobile App Development" class="img-standard mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Enterprise Mobile App</h3>
+                    <p class="text-gray-600">Developed a robust mobile application that streamlined internal processes for a large enterprise.</p>
+                </div>
+                <!-- Project 3 -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+                    <img src="https://placehold.co/400x250/fca5a5/ffffff?text=Case+Study+3" alt="Data Analytics Dashboard" class="img-standard mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Advanced Analytics Dashboard</h3>
+                    <p class="text-gray-600">Implemented a custom data analytics dashboard providing actionable insights for strategic decisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-16 md:py-24 bg-blue-700 text-white text-center rounded-t-xl shadow-lg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
+            <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+                Contact us today for a personalized consultation and discover how we can help.
+            </p>
+            <a href="#contact" class="bg-white hover:bg-gray-100 text-blue-700 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                Get a Quote
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Reach Out to Us</h2>
+            <div class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+                <form>
+                    <div class="mb-6">
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200" placeholder="Your Name">
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200" placeholder="your.email@example.com">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                        <textarea id="message" name="message" rows="6" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200" placeholder="Your message..."></textarea>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <button type="submit" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="text-center mt-12 text-gray-700">
+                <p><strong>Email:</strong> contact@yourbusiness.com</p>
+                <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                <p><strong>Address:</strong> 456 Innovation Drive, Suite 101, Tech City, TX, 78701</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 rounded-t-xl shadow-inner">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Your Business Name. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            mobileMenuOverlay.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            mobileMenuOverlay.style.display = 'none';
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+        closeMobileMenuButton.addEventListener('click', closeMobileMenu);
+
+        // Close mobile menu when a navigation link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(item => {
+            item.addEventListener('click', closeMobileMenu);
+        });
+    </script>
+
+</body>
+</html>
